@@ -1,0 +1,261 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6DF82AF41BCC46280097A23C /* Utils.c in Sources */ = {isa = PBXBuildFile; fileRef = 6DF82AF21BCC46280097A23C /* Utils.c */; settings = {ASSET_TAGS = (); }; };
+		6DF82AF61BCC463C0097A23C /* Optimizer.c in Sources */ = {isa = PBXBuildFile; fileRef = 6DF82AF51BCC463C0097A23C /* Optimizer.c */; settings = {ASSET_TAGS = (); }; };
+		6DF82AFB1BCC464E0097A23C /* Compiler.c in Sources */ = {isa = PBXBuildFile; fileRef = 6DF82AF71BCC464E0097A23C /* Compiler.c */; settings = {ASSET_TAGS = (); }; };
+		6DF82AFC1BCC464E0097A23C /* InstrUtils.c in Sources */ = {isa = PBXBuildFile; fileRef = 6DF82AF91BCC464E0097A23C /* InstrUtils.c */; settings = {ASSET_TAGS = (); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6D90FD851BCC453B00DEB1CA /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		6D90FD871BCC453B00DEB1CA /* TinyL Parser */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "TinyL Parser"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6DF82AF21BCC46280097A23C /* Utils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Utils.c; sourceTree = "<group>"; };
+		6DF82AF31BCC46280097A23C /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		6DF82AF51BCC463C0097A23C /* Optimizer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Optimizer.c; sourceTree = "<group>"; };
+		6DF82AF71BCC464E0097A23C /* Compiler.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Compiler.c; sourceTree = "<group>"; };
+		6DF82AF81BCC464E0097A23C /* Instr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Instr.h; sourceTree = "<group>"; };
+		6DF82AF91BCC464E0097A23C /* InstrUtils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = InstrUtils.c; sourceTree = "<group>"; };
+		6DF82AFA1BCC464E0097A23C /* InstrUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstrUtils.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6D90FD841BCC453B00DEB1CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6D90FD7E1BCC453B00DEB1CA = {
+			isa = PBXGroup;
+			children = (
+				6D90FD891BCC453B00DEB1CA /* TinyL Parser */,
+				6D90FD881BCC453B00DEB1CA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6D90FD881BCC453B00DEB1CA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6D90FD871BCC453B00DEB1CA /* TinyL Parser */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6D90FD891BCC453B00DEB1CA /* TinyL Parser */ = {
+			isa = PBXGroup;
+			children = (
+				6DF82AF71BCC464E0097A23C /* Compiler.c */,
+				6DF82AF81BCC464E0097A23C /* Instr.h */,
+				6DF82AF91BCC464E0097A23C /* InstrUtils.c */,
+				6DF82AFA1BCC464E0097A23C /* InstrUtils.h */,
+				6DF82AF51BCC463C0097A23C /* Optimizer.c */,
+				6DF82AF21BCC46280097A23C /* Utils.c */,
+				6DF82AF31BCC46280097A23C /* Utils.h */,
+			);
+			path = "TinyL Parser";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6D90FD861BCC453B00DEB1CA /* TinyL Parser */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6D90FD8E1BCC453B00DEB1CA /* Build configuration list for PBXNativeTarget "TinyL Parser" */;
+			buildPhases = (
+				6D90FD831BCC453B00DEB1CA /* Sources */,
+				6D90FD841BCC453B00DEB1CA /* Frameworks */,
+				6D90FD851BCC453B00DEB1CA /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "TinyL Parser";
+			productName = "TinyL Parser";
+			productReference = 6D90FD871BCC453B00DEB1CA /* TinyL Parser */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6D90FD7F1BCC453B00DEB1CA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Vince Xie";
+				TargetAttributes = {
+					6D90FD861BCC453B00DEB1CA = {
+						CreatedOnToolsVersion = 7.0;
+					};
+				};
+			};
+			buildConfigurationList = 6D90FD821BCC453B00DEB1CA /* Build configuration list for PBXProject "TinyL Parser" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 6D90FD7E1BCC453B00DEB1CA;
+			productRefGroup = 6D90FD881BCC453B00DEB1CA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6D90FD861BCC453B00DEB1CA /* TinyL Parser */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6D90FD831BCC453B00DEB1CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6DF82AFB1BCC464E0097A23C /* Compiler.c in Sources */,
+				6DF82AF41BCC46280097A23C /* Utils.c in Sources */,
+				6DF82AFC1BCC464E0097A23C /* InstrUtils.c in Sources */,
+				6DF82AF61BCC463C0097A23C /* Optimizer.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		6D90FD8C1BCC453B00DEB1CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		6D90FD8D1BCC453B00DEB1CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		6D90FD8F1BCC453B00DEB1CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		6D90FD901BCC453B00DEB1CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6D90FD821BCC453B00DEB1CA /* Build configuration list for PBXProject "TinyL Parser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D90FD8C1BCC453B00DEB1CA /* Debug */,
+				6D90FD8D1BCC453B00DEB1CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6D90FD8E1BCC453B00DEB1CA /* Build configuration list for PBXNativeTarget "TinyL Parser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D90FD8F1BCC453B00DEB1CA /* Debug */,
+				6D90FD901BCC453B00DEB1CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6D90FD7F1BCC453B00DEB1CA /* Project object */;
+}

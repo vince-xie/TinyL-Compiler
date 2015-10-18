@@ -205,8 +205,8 @@ static void print()
 		ERROR("Expected identifier, got %c\n", token);
 		exit(EXIT_FAILURE);
 	}
-	reg = variable();
 	int offset = (token-'a')*4;
+	reg = variable();
 	CodeGen(OUTPUTAI, 0, offset, EMPTY_FIELD);
 }
 
@@ -270,7 +270,7 @@ static void stmtlist()
 		case 'l':
 		case 'm':
 		case 'n':
-		case ';':
+		case '!':
 			stmt();
 			morestmts();
 			break;

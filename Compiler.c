@@ -122,14 +122,42 @@ static int expr()
 		reg = next_register();
 		CodeGen(ADD, left_reg, right_reg, reg);
 		return reg;
-
-	/* YOUR CODE GOES HERE */
-
+	case '-':
+		next_token();
+		left_reg = expr();
+		right_reg = expr();
+		reg = next_register();
+		CodeGen(SUB, left_reg, right_reg, reg);
+		return reg;
+	case '*':
+		next_token();
+		left_reg = expr();
+		right_reg = expr();
+		reg = next_register();
+		CodeGen(MUL, left_reg, right_reg, reg);
+		return reg;
+	case '/':
+		next_token();
+		left_reg = expr();
+		right_reg = expr();
+		reg = next_register();
+		CodeGen(DIV, left_reg, right_reg, reg);
+		return reg;
+	case 'a':
+	case 'b':
+	case 'c':
+	case 'd':
+	case 'e':
 	case 'f':
+	case 'g':
+	case 'h':
+	case 'i':
+	case 'j':
+	case 'k':
+	case 'l':
+	case 'm':
+	case 'n':
 		return variable();
-
-	/* YOUR CODE GOES HERE */
-
 	case '0':
 	case '1':
 	case '2':
@@ -149,12 +177,37 @@ static int expr()
 
 static void assign()
 {
-	/* YOUR CODE GOES HERE */
+	int reg;
+	if(!is_identifier(token)){
+		ERROR("Identifier expected, got %c\n", token);
+		exit(EXIT_FAILURE);
+	}
+	int offset = (token-'a')*4;
+	next_token();
+	if(token != '='){
+		ERROR("Expected '=', got %c\n", token);
+		exit(EXIT_FAILURE);
+	}
+	next_token();
+	reg = expr();
+	CodeGen(STOREAI, reg, 0, offset);
 }
 
 static void print()
 {
-	/* YOUR CODE GOES HERE */
+	int reg;
+	if(token != '!'){
+		ERROR("Expected '!', got %c\n", token);
+		exit(EXIT_FAILURE);
+	}
+	next_token();
+	if(!is_identifier(token)){
+		ERROR("Expected identifier, got %c\n", token);
+		exit(EXIT_FAILURE);
+	}
+	reg = variable();
+	int offset = (token-'a')*4;
+	CodeGen(OUTPUTAI, 0, offset, EMPTY_FIELD);
 }
 
 static void stmt()

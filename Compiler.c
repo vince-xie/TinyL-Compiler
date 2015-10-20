@@ -195,7 +195,6 @@ static void assign()
 
 static void print()
 {
-	int reg;
 	if(token != '!'){
 		ERROR("Expected '!', got %c\n", token);
 		exit(EXIT_FAILURE);
@@ -206,7 +205,7 @@ static void print()
 		exit(EXIT_FAILURE);
 	}
 	int offset = (token-'a')*4;
-	reg = variable();
+	next_token();
 	CodeGen(OUTPUTAI, 0, offset, EMPTY_FIELD);
 }
 

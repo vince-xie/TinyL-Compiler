@@ -13,23 +13,6 @@
 #include "InstrUtils.h"
 #include "Utils.h"
 
-void markVariable(int reg, int offset, Instruction *ins){
-	Instruction *temp = ins;
-	while(temp != NULL){
-		if((temp->opcode == ADD || temp->opcode == SUB || temp->opcode == MUL || temp->opcode == DIV) && temp->field3 == reg){
-			temp->critical = 1;
-			markCode(temp->field1, temp);
-			markCode(temp->field2, temp);
-		} else if(temp->opcode == LOADAI && temp->field3 == reg){
-			temp->critical = 1;
-			markVariable(temp->field1, temp->field2, temp);
-		} else if(temp->opcode == LOADI && temp->field2 == reg){
-			temp->critical = 1;
-		}
-		temp = temp->prev;
-	}	
-}
-
 void markCode(int reg, Instruction *ins){
 	Instruction *temp = ins;
 	while(temp != NULL){
@@ -39,7 +22,14 @@ void markCode(int reg, Instruction *ins){
 			markCode(temp->field2, temp);
 		} else if(temp->opcode == LOADAI && temp->field3 == reg){
 			temp->critical = 1;
-			//markVariable(temp->field1, temp->field2, temp);
+			Instruction *iterator = temp;
+			while(iterator->opcode != STOREAI || iterator->field3 != temp->field2){
+				iterator = iterator->prev;	
+			}
+			if(iterator->opcode == STOREAI && iterator->field3 == temp->field2){
+				iterator->critical = 1;
+				markCode(iterator->field1, iterator);
+			}
 		} else if(temp->opcode == LOADI && temp->field2 == reg){
 			temp->critical = 1;
 		}
@@ -62,21 +52,21 @@ int main()
 		temp->critical = 0;
 		temp = temp->next;
 	}
-	temp = head;
-	temp->critical = 1;
+	head->critical = 1;
+	temp = LastInstruction(head);
 	while(temp != NULL){
 		if(temp->opcode == OUTPUTAI){
 			temp->critical = 1;
 			Instruction *iterator = temp;
-			while(iterator != head){
-				if(iterator->opcode == STOREAI && iterator->field3 == temp->field2){
-					iterator->critical = 1;
-					markCode(iterator->field1, iterator);
-				}
+			while(iterator->opcode != STOREAI || iterator->field3 != temp->field2){
 				iterator = iterator->prev;	
 			}
+			if(iterator->opcode == STOREAI && iterator->field3 == temp->field2){
+				iterator->critical = 1;
+				markCode(iterator->field1, iterator);
+			}
 		}
-		temp = temp->next;
+		temp = temp->prev;
 	}
 
 	if (head) 

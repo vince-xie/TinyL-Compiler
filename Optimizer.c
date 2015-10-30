@@ -29,6 +29,7 @@ void markCode(int reg, Instruction *ins){
 			if(iterator->opcode == STOREAI && iterator->field3 == temp->field2){
 				iterator->critical = 1;
 				markCode(iterator->field1, iterator);
+				markCode(iterator->field2, iterator);
 			}
 		} else if(temp->opcode == LOADI && temp->field2 == reg){
 			temp->critical = 1;

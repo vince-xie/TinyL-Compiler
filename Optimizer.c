@@ -75,8 +75,8 @@ int main()
 
 	temp = head;	
 	while(temp != NULL){
-		free(head);
 		temp = temp->next;
+		free(head);
 		head = temp;	
 	}
 	
